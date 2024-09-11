@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <h1 class="text-center p-2">Adopta a uno de nosotros 🥰 </h1>
+  <div class="row">
+    {% for elemento in mascota_p %}
+    <div class="col-md-4 col-6 mb-4 g-4">
+      <div class="card">
+        <picture class="text-center mt-3">
+          <img src="{{elemento.foto_pubm.url}}" alt="imagen-mascota"
+            class="img-thumbnail rounded img-fluid d-block mx-auto p-3">
+        </picture>
+        <div class="card-body">
+          <h5 class="text-center">¡Hola!👋 soy {{elemento.mascota_pubm.nombre_mas}}</h5>
+          <div class="card-footer p-4 text-center">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+              data-bs-target="#Modal{{ forloop.counter }}">
+              Más sobre mí
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="Modal{{ forloop.counter }}" tabindex="-1"
+              aria-labelledby="exampleModalLabel{{ forloop.counter }}" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      {{elemento.mascota_pubm.nombre_mas}}
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="card">
+                      <picture class="text-center">
+                        <img src="{{elemento.foto_pubm.url}}" alt="imagen_blog"
+                          class="img-thumbnail rounded img-fluid custom-img d-block mx-auto">
+                      </picture>
+                      <div class="card-body">
+                        <h5 class="text-center">¡Hola!👋 soy {{elemento.mascota_pubm.nombre_mas}}
+                        </h5>
+                        <p class="card-text">
+                          {{elemento.descripcion_pubm}}
+                        </p>
+                        <div class="card-footer p-4">
+                          <figcaption>
+                            <ul class="text-start">
+                              <li>Fui rescatado/a el día: {{elemento.mascota_pubm.fecha_mas}}.</li>
+                              <li>Me encontraron en: {{elemento.mascota_pubm.lugar_mas}} </li>
+                              <li>Soy: {{elemento.mascota_pubm.get_sexo_mas_display}}.</li>
+                              <li>Tengo aprox.: {{elemento.mascota_pubm.edad_mas}} años de edad. </li>
+                              {% if elemento.mascota_pubm.observacion_mas %}
+                                <li>Observaciones: {{ elemento.mascota_pubm.observacion_mas }}.</li>
+                              {% endif %}
+                            </ul>             
+                          </figcaption>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}

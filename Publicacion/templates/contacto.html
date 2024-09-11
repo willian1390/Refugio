@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="contenedor-contacto mt-4">
+    <div class="card-container blur">
+        <div class="card mb-3 card-contacto">
+            <div class="row g-0 align-items-center">
+                <div class="col-md-4" data-aos="zoom-out" data-aos-duration="2000">
+                    <img src="{% static 'img/info.webp' %}" class="img-fluid rounded-start shadow-lg" alt="Perrito con cartel de información">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body text-center">
+                        <h3 class="card-title text-center text-uppercase font-weight-bold">Información sobre nosotros</h3>
+                        <p class="card-text lead mt-4">¿Quieres conocer más sobre nuestra manada?</p>
+                        <p class="card-text lead">Puedes comunicarte con nosotros por medio de <a href="https://www.facebook.com/asociacionsirius/?locale=es_LA" target="_blank" rel="noopener noreferrer" class="custom-link">Nuestra página de Facebook</a>.</p>
+                        <p class="card-text lead">O también puedes preguntar por nosotros en veterinaria Vets Chiquimula.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

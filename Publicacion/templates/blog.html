@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<!--CONTENIDO AQUI-->
+<div class="container">
+    <div class="row">
+        {% for elemento in blog %}
+        <div class="col-md-4 col-6 mb-4 g-4">
+            <div class="card">
+                <picture class="text-center">
+                    <img src="{{ elemento.foto_blog.url }}" alt="imagen_blog"
+                        class="img-thumbnail rounded img-fluid custom-img d-block mx-auto">
+                </picture>
+                <div class="card-body">
+                    <h5 class="text-center">{{elemento.titulo_blog}}</h5>
+                    <p class="card-text text-truncate">
+                        {{elemento.contenido_blog}}
+                    </p>
+                    <div class="card-footer p-4 text-center">
+                        <figcaption class="blockquote-footer">{{elemento.creado_blog}}</figcaption>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#Modal{{ forloop.counter }}">
+                            Ver más...
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="Modal{{ forloop.counter }}" tabindex="-1"
+                            aria-labelledby="exampleModalLabel{{ forloop.counter }}" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">{{elemento.titulo_blog}}
+                                        </h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="card">
+                                            <picture class="text-center">
+                                                <img src="{{ elemento.foto_blog.url }}" alt="imagen_blog"
+                                                    class="img-thumbnail rounded img-fluid custom-img d-block mx-auto">
+                                            </picture>
+                                            <div class="card-body">
+                                                <h5 class="text-center" alt="Titulo del blog">{{elemento.titulo_blog}}
+                                                </h5>
+                                                <p class="card-text" alt="Contenido del blog">
+                                                    {{elemento.contenido_blog}}
+                                                </p>
+                                                <div class="card-footer p-4">
+                                                    <figcaption class="blockquote-footer" alt="Fecha de creacion">
+                                                        {{elemento.creado_blog}}
+                                                    </figcaption>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

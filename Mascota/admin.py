@@ -10,11 +10,12 @@ class AdministracionMedicamentoInline(admin.TabularInline):
 
 class MascotaAdmin(admin.ModelAdmin):
     inlines = (AdministracionMedicamentoInline,)
+    search_fields = ['nombre_mas']
     list_display = ("fecha_mas","nombre_mas", "lugar_mas","edad_mas",
 		"sexo_mas","esteril_mas", "foto",)
     
     def foto(self, object):
-        return format_html('<img src="{}" width="90" height="70" />', object.foto_mas.url)
+        return format_html('<img src={} width="70" height="80" />', object.foto_mas.url)
 
 class MedicamentoAdmin(admin.ModelAdmin):
     list_display = ("nombre_med", "precio_med",)

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<!--CONTENIDO AQUI-->
+<div class="content-fluid">
+    <div class="card mb-5 mt-5 d-flex justify-content-center mx-auto" style="max-width: 800px;" data-aos="fade-right">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{% static 'img/QuienesSomos.webp' %}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8 d-flex align-items-center justify-content-center p-5">
+                <div class="card-body">
+                    <h2 class="card-title">Quienes somos</h2>
+                    <p class="card-text">
+                        Somos una asociación sin fines de lucro,
+                        en ayuda de los perros en situacion de calle.
+                        Amamos, cuidamos, rspetamos y luchamos por el bienestar animal.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-5 mt-5 d-flex justify-content-center mx-auto" style="max-width: 800px;" data-aos="fade-left">
+        <div class="row g-0">
+            <div class="col-md-8 d-flex align-items-center justify-content-center p-5">
+                <div class="card-body">
+                    <h2 class="card-title">Historia</h2>
+                    <p class="card-text">
+                        Se fundó en el año 2016, personas amantes de los animales
+                        se organizaron para poder armar una asociación que ayudará
+                        a los mas vulnerables (cachorros, enfermos, atropellados, etc.)
+                        en Chiquimula.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'img/Historia.webp' %}" class="img-fluid rounded-start" alt="...">
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-5 mt-5 d-flex justify-content-center mx-auto" style="max-width: 800px;" data-aos="fade-right">
+        <div class="row g-0">
+            <div class="col-md-4 d-flex align-items-center justify-content-center">
+                <img src="{% static 'img/ayuda.jpeg' %}" class="img-fluid rounded-start" alt="..." style="width: 100%;">
+            </div>
+            <div class="col-md-8 d-flex align-items-center justify-content-center p-5">
+                <div class="card-body text-center">
+                    <h2 class="card-title">¿Cómo puedes ayudarnos?</h2>
+                    <p class="card-text">
+                        <ol id="lista-ayuda" style="list-style: none;">
+                            <li>Con Donaciones.</li>
+                            <li>Apadrinando una mascota.</li>
+                            <li>Siendo un voluntario.</li>
+                            <li>Siendo un socio.</li>
+                        </ol>
+                    </p>
+                    <a href="{% url 'ayuda' %}" class="btn btn-primary mt-3 w-50">Más información</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

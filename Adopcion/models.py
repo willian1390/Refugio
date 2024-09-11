@@ -1,5 +1,5 @@
 from django.db import models
-from ckeditor.fields import RichTextField
+
 
 #Importacion de modelos
 from Mascota.models import Mascota
@@ -16,7 +16,7 @@ class Persona(models.Model):
 
     class Meta:
         verbose_name = "Persona"
-        verbose_name_plural = "Adoptar Mascota"
+        verbose_name_plural = "Crear Adopción"
 
     def __str__ (self):
         return f"{self.nombre_p} {self.apellido_p}"
@@ -24,17 +24,17 @@ class Persona(models.Model):
 class Adopcion(models.Model):
     id_adopcion = models.AutoField(primary_key=True)
     fecha_adop = models.DateField(auto_now_add=True)
-    preguntas_adop = RichTextField(default="preguntas para adoptar",verbose_name="Formulario")
+    preguntas_adop = models.TextField(default="preguntas para adoptar",verbose_name="Formulario")
     
     #llaves foraneas
     #una persona puede realizar varias adopciones
-    persona_adop = models.ForeignKey(Persona, verbose_name="Adoptante", on_delete=models.CASCADE)
+    persona_adop = models.ForeignKey(Persona, verbose_name="Adoptante", on_delete=models.CASCADE, related_name='adopciones')
     #una mascota solo puede ser adoptada una vez
     mascota_adop = models.OneToOneField(Mascota, verbose_name="Mascota", on_delete=models.CASCADE)
     #Nombres con los que aparece en el panel de administracion
     class Meta:
         verbose_name = "Adopción"
-        verbose_name_plural = "Lista de Adopciones"
+        verbose_name_plural = "Mascotas adoptadas"
 
     def __str__(self):
         return f"{self.fecha_adop} - {self.mascota_adop} - {self.persona_adop}"

@@ -65,7 +65,7 @@ class Mascota(models.Model):
     color_mas = models.CharField(max_length= 30,verbose_name="Color")
     observacion_mas = models.CharField(max_length = 100,verbose_name="Observaciones", blank=True)
     esteril_mas = models.CharField(choices = esteril, default = 'N', max_length = 20,verbose_name="¿Esterilizado?")
-    foto_mas =  models.ImageField(upload_to="mascota/", verbose_name="Foto")
+    foto_mas =  models.ImageField(upload_to="mascota", verbose_name="Foto")
     active = models.BooleanField(default=True,verbose_name="Activo")
     created = models.DateField(auto_now_add=True)
 

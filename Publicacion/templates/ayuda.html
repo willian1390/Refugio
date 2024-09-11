@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<!--DONACIONES-->
+<div class="container">
+    <div class="row">
+        <div class="card-group text-center justify-content-center mx-auto mt-5" style="width: 75rem;">
+            
+            <div class="card" data-aos="fade-right">
+                <img src="{% static 'img/alimento.jpg' %}"
+                    class="card-img-top img-thumbnail rounded img-fluid custom-img d-block mx-auto mt-3 mb-3" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Alimento para mascotas 🐶😺</h5>
+                    <p class="card-text mb-3">Las donaciones como concentrado para perro son de mucha ayuda
+                        para la asociación, debido a que la demanda es alta por la cantidad de perros que albergamos,
+                        ellos necesitan de alimentación diaria para poder recuperarse y estar en buenas condiciones
+                        para su adopción.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="card" data-aos="fade-up">
+                <img src="{% static 'img/abrigos.jpg' %}"
+                    class="card-img-top img-thumbnail rounded img-fluid custom-img d-block mx-auto mt-3 mb-3" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Abrigos, mantas, toallas...</h5>
+                    <p class="card-text mb-3">Otro tipo de ayuda hacia perros rescatados son los abrigos, mantas y
+                        toallas,
+                        estas prendas nos sirven para hacerles cogines o camas para que ellos puedan dormir y descansar,
+                        tambien para las temporadas frías es de mucha utilidad para que ellos no sientan frío por las
+                        noches.</p>
+                </div>
+            </div>
+
+
+            <div class="card" data-aos="fade-left">
+                <img src="{% static 'img/donar.jpg' %}"
+                    class="card-img-top img-thumbnail rounded img-fluid custom-img d-block mx-auto mt-3 mb-3" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Donaciones en efectivo</h5>
+                    <p class="card-text mb-3">Las donaciones en efectivo son utilizadas para costear los tratamientos
+                        que
+                        necesitan nuestrso perros rescatados, muchos de ellos necesitan ser vacunados, esterilizados,
+                        medicados
+                        e incluso necesita operaciones.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" data-aos="fade-right">
+        <div class="col-3"></div>
+        <div class="col-6 text-center mt-2 blur" style="background-color: #8ac9eb25;">
+            <h4>Tus donaciones nos ayudan mucho</h4>
+            <p class="parrafo"> Muchas vidas seran salvadas gracias a tí 🐶</p>
+            <p class="parrafo">Puedes pasar a dejar tu donativo en veterinaria Vets, Chiquimula.</p>
+            <p class="parrafo">11a. Avenida 4-64 Zona 1, Chiquimula </p>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+
+<!--VOLUNTARIO-->
+<div class="container">
+    <div class="card mb-5 mt-5 mx-auto" style="max-width: 1000px;">
+        <div class="row" data-aos="fade-right">
+            <!-- Columna de la izquierda -->
+            <div class="col-md-4 d-flex flex-column align-items-center justify-content-center">
+                <!-- Descripción -->
+                <div class="text-center m-3">
+                    <h3 class="card-title">Sé un voluntario</h3>
+                    <p>
+                        Los voluntarios dedican su tiempo para ayudar a nuestros perritos sin recibir pago,
+                        obteniendo la satisfacción de mejorar su hogar. Ser voluntario implica responsabilidades;
+                        en la casa de recuperación hay dos turnos diarios, todos los días, que incluyen alimentar,
+                        medicar, limpiar y cuidar a los perritos. Contáctanos por
+                        <a href="https://www.facebook.com/asociacionsirius/?locale=es_LA" target="_blank"
+                            rel="noopener noreferrer">Facebook</a>.
+                    </p>
+                </div>
+                <!-- Imagen -->
+                <div class=" rounded img-fluid">
+                    <img src="{% static 'img/voluntarios.jpg' %}" class="img-fluid rounded float-end" alt="Voluntarios"
+                        style="width: 70%;">
+                </div>
+            </div>
+
+            <!-- Columna de la derecha -->
+            <div class="col-md-8 d-flex align-items-center justify-content-center p-5">
+                <div class="card-body text-center">
+                    <h4>¡Ayuda a nuestros amigos!</h4>
+                    <p>Cuando llegas al lugar donde acogemos a nuestros perritos puedes ayudar de las siguientes
+                        maneras:</p>
+                    <ul id="lista-ayuda" style="list-style: none;">
+                        <li data-aos="fade-right">Donaciones de alimento.</li>
+                        <li data-aos="fade-right">Artículos de cuidado general de los perritos.</li>
+                        <li data-aos="fade-right">Buscando familias que quieran adoptar.</li>
+                        <li data-aos="fade-right">Ofreciendo un hogar temporal en tu propia casa.</li>
+                        <li data-aos="fade-right">Difundiendo mediante redes sociales.</li>
+                        <li data-aos="fade-right">Ayudando al mantenimiento del lugar.</li>
+                        <li data-aos="fade-right">Recolectando materiales que sean de utilidad para los perritos.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--APADRINA - SOCIO-->
+<div class="container">
+    <div class="card mb-4 mx-auto" style="max-width: 62.5rem;" data-aos="fade-right">
+        <div class="row g-0 p-3">
+            <div class="col-md-4">
+                <img src="{% static 'img/apadrina.jpg' %}" class="img-fluid rounded img-thumbnail" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body text-center">
+                    <h5 class="card-title mt-3">Apadrina</h5>
+                    <p class="card-text p-2">
+                        El apadrinamiento permite a las personas colaborar con la manutención de un perro en un albergue. Además, algunos pueden pasear a los perros, hacer actividades con ellos o cuidarlos temporalmente en casa.
+                        Apadrinar es ideal para quienes no pueden tener una mascota. Al apadrinar, contribuyes con una cuota mensual para cubrir gastos médicos y de alimentación. También puedes donar alimentos, lo que reduce los costos. Según el tamaño, un perro puede consumir entre 4 y 10 kg de comida al mes, o incluso más.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-4 mx-auto" style="max-width: 62.5rem;" data-aos="fade-right">
+        <div class="row g-0 p-3">
+            <div class="col-md-4">
+                <img src="{% static 'img/socio.jpg' %}" class="img-fluid rounded img-thumbnail" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body text-center">
+                    <h5 class="card-title mt-3">Se socio</h5>
+                    <p class="card-text p-2">
+                        Para nosotros un socio representa a una persona que forma parte
+				de nuestra asociación, su finalidad es de tipo social, esta entidad
+				contribuye de manera financiera donando periodicamente una
+				cantidad de dinero para los gastos que conlleva el cuidado de todos
+				los animales que hemos rescatado. 
+
+				Ser socio significa que posees empatía con los animales, y estar dispuesto
+				a colaborar para que ellos puedan tener una mejor vida.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
